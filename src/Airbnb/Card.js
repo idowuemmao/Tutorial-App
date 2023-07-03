@@ -14,18 +14,18 @@ export default function Card(props) {
       <div className="absolute bg-white m-10 rounded px-2">{badgeText}</div>
       <img
         className="max-w-xs rounded-2xl"
-        src={props.coverImg}
+        src={props.card.coverImg}
         alt="card-pic"
       />
       <div className="flex gap-1">
         <img src={star} alt="star" />
-        <p>{props.rating}</p>
-        <p>({props.reviewCount})</p>
-        <p> . {props.location}</p>
+        <p>{props.card.stats.rating}</p>
+        <p>({props.card.stats.reviewCount})</p>
+        <p> . {props.card.location}</p>
       </div>
-      <p>{props.description}</p>
+      <p>{props.card.description}</p>
       <p>
-        <b>From ${props.price}</b> / person
+        <b>From ${props.card.price}</b> / person
       </p>
     </div>
   );
