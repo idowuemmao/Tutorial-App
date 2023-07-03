@@ -35,10 +35,19 @@ const StatePractice = () => {
   function add() {
     setCount((prevCOUNT) => prevCOUNT + 1);
   }
+
+  const [thingsArray, setThingsArray] = React.useState(["Thing 1", "Thing 2"]);
+  function addItem() {
+    setThingsArray((prevThings) => [
+      ...prevThings,
+      `Thing ${prevThings.length + 1} `,
+    ]);
+  }
+  const thingElement = thingsArray.map((thing) => <li key={thing}>{thing}</li>);
   return (
-    <div className="text-center sm:text-base text-xs pt-4 font-bold text-fuchsia-700 italic font-mono">
+    <div className="text-center grid gap-4 sm:text-base text-xs pt-4 font-bold text-fuchsia-700 italic font-mono">
       <div onClick={HandleGreeting}> {Greeting("Emmanuel")}</div>
-      <div className="flex pt-2 items-center justify-center gap-2 text-2xl">
+      <div className="flex items-center justify-center gap-4 text-2xl">
         <button
           onClick={minus}
           className="p-2 rounded-full bg-fuchsia-700 text-white"
@@ -52,6 +61,15 @@ const StatePractice = () => {
         >
           +
         </button>
+      </div>
+      <div className="grid w-full place-items-center">
+        <button
+          onClick={addItem}
+          className="p-2 rounded-full bg-fuchsia-700 text-white"
+        >
+          Add Things
+        </button>
+        {thingElement}
       </div>
     </div>
   );
