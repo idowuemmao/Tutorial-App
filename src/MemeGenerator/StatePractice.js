@@ -5,15 +5,15 @@ const StatePractice = () => {
   const hours = date.getHours();
   let timeOfDay;
 
-  const [greet, setGreeting] = React.useState(true);
+  const [greet, setGreeting] = React.useState("Hello");
   function HandleGreeting() {
-    setGreeting((prevGreet) => (prevGreet = "Hi"));
     // setGreeting("Hi");
     // if (greet === "Hello") {
     //   setGreeting("Hi");
-    // } else if (greet === "Hi") {
+    // } else {
     //   setGreeting("Hello");
     // }
+    greet === "Hello" ? setGreeting("Hi") : setGreeting("Hello");
   }
   function Greeting(name) {
     if (hours > 4 && hours <= 12) {
@@ -36,11 +36,8 @@ const StatePractice = () => {
     setCount((prevCOUNT) => prevCOUNT + 1);
   }
   return (
-    <div
-      onClick={HandleGreeting}
-      className="text-center sm:text-base text-xs pt-4 font-bold text-fuchsia-700 italic font-mono"
-    >
-      <div> {greet ? `Hello'+ ${Greeting('Emmanuel')} ${:} "Hi" + ${Greeting('Emmanuel')}`}</div>
+    <div className="text-center sm:text-base text-xs pt-4 font-bold text-fuchsia-700 italic font-mono">
+      <div onClick={HandleGreeting}> {Greeting("Emmanuel")}</div>
       <div className="flex pt-2 items-center justify-center gap-2 text-2xl">
         <button
           onClick={minus}
