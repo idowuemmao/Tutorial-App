@@ -6,7 +6,7 @@ const MemeGen = () => {
   return (
     <div className="w-3/4 m-12 shadow-xl">
       <MemeNavBar />
-      <StatePractice />
+      {/* <StatePractice /> */}
       <MemeInput />
     </div>
   );

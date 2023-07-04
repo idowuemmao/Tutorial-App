@@ -36,6 +36,7 @@ function App() {
     //   <Main />
     //   <div className="flex overflow-auto">{cardElement}</div>
     // </div>
+    //Meme Generator
     <div>
       <MemeGen />
     </div>

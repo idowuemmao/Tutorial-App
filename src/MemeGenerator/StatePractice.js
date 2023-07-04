@@ -1,4 +1,7 @@
 import React from "react";
+import imag from "../Images/pauline.jpg";
+import star1 from "../Images/star1.png";
+import star2 from "../Images/star2.png";
 
 const StatePractice = () => {
   const date = new Date();
@@ -44,9 +47,34 @@ const StatePractice = () => {
     ]);
   }
   const thingElement = thingsArray.map((thing) => <li key={thing}>{thing}</li>);
+
+  const [contact, setContact] = React.useState({
+    name: "Grace Peacefull",
+    coverImg: imag,
+    contact: "1234567890",
+    email: "grace@example.com",
+    isFavorite: true,
+  });
+  let starIcon = contact.isFavorite ? star1 : star2;
+
+  function toogleFavourite() {
+    setContact((prevContact) => {
+      return {
+        ...prevContact,
+        isFavorite: !prevContact.isFavorite,
+      };
+    });
+  }
+
   return (
-    <div className="text-center grid gap-4 sm:text-base text-xs pt-4 font-bold text-fuchsia-700 italic font-mono">
-      <div onClick={HandleGreeting}> {Greeting("Emmanuel")}</div>
+    <div className="text-center grid gap-4 sm:text-base text-xs pt-4 font-bold italic font-mono">
+      <div
+        onClick={HandleGreeting}
+        className="bg-fuchsia-700 text-white py-2 cursor-pointer rounded-full border-4 border-sky-600"
+      >
+        {" "}
+        {Greeting("Emmanuel")}
+      </div>
       <div className="flex items-center justify-center gap-4 text-2xl">
         <button
           onClick={minus}
@@ -70,6 +98,22 @@ const StatePractice = () => {
           Add Things
         </button>
         {thingElement}
+      </div>
+      <div className="shadow-lg grid place-items-center w-auto border-2 font-serif text-xs font-thin">
+        <img
+          alt="contact-img"
+          src={contact.coverImg}
+          className="rounded-full w-36"
+        />
+        <img
+          src={starIcon}
+          onClick={toogleFavourite}
+          alt="star"
+          className="w-5"
+        />
+        <h1 className="text-lg">{contact.name}</h1>
+        <p>{contact.contact}</p>
+        <p>{contact.email}</p>
       </div>
     </div>
   );
