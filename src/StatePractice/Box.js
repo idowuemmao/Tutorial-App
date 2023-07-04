@@ -1,6 +1,6 @@
 import React from "react";
 import BoxData from "./BoxData";
-i
+
 
 export default function Box() {
   const [boxes, setBoxes] = React.useState(BoxData);
