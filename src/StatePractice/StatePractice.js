@@ -1,7 +1,8 @@
 import React from "react";
+import Star from "./Star";
+import Count from "./Count";
+import Box from "./Box";
 import imag from "../Images/pauline.jpg";
-import star1 from "../Images/star1.png";
-import star2 from "../Images/star2.png";
 
 const StatePractice = () => {
   const date = new Date();
@@ -47,7 +48,6 @@ const StatePractice = () => {
     ]);
   }
   const thingElement = thingsArray.map((thing) => <li key={thing}>{thing}</li>);
-
   const [contact, setContact] = React.useState({
     name: "Grace Peacefull",
     coverImg: imag,
@@ -55,14 +55,9 @@ const StatePractice = () => {
     email: "grace@example.com",
     isFavorite: true,
   });
-  let starIcon = contact.isFavorite ? star1 : star2;
-
-  function toogleFavourite() {
+  function toogleFav() {
     setContact((prevContact) => {
-      return {
-        ...prevContact,
-        isFavorite: !prevContact.isFavorite,
-      };
+      return { ...prevContact, isFavorite: !prevContact.isFavorite };
     });
   }
 
@@ -82,7 +77,7 @@ const StatePractice = () => {
         >
           -
         </button>
-        <h1>{count}</h1>
+        <Count number={count} />
         <button
           onClick={add}
           className="p-2 rounded-full bg-fuchsia-700 text-white"
@@ -105,15 +100,13 @@ const StatePractice = () => {
           src={contact.coverImg}
           className="rounded-full w-36"
         />
-        <img
-          src={starIcon}
-          onClick={toogleFavourite}
-          alt="star"
-          className="w-5"
-        />
+        <Star isfilled={contact.isFavorite} handleClick={toogleFav} />
         <h1 className="text-lg">{contact.name}</h1>
         <p>{contact.contact}</p>
         <p>{contact.email}</p>
+      </div>
+      <div>
+        <Box />
       </div>
     </div>
   );
