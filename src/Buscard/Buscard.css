@@ -1,0 +1,87 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: rgba(0, 0, 0, 0.827);
+  display: grid;
+  place-items: center;
+}
+.body {
+  background-color: rgba(0, 0, 0, 0.888) !important;
+  color: white !important;
+  max-width: 300px;
+  padding-bottom: 1rem;
+  max-height: fit-content;
+  box-shadow: 2px 5px 5px 0px rgba(0, 0, 0, 0.947);
+}
+.header {
+  display: grid;
+  place-items: center;
+}
+.profilepic {
+  width: 100%;
+  object-fit: contain;
+}
+.name {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-top: 1rem;
+  color: rgb(58, 88, 151);
+}
+.title {
+  font-size: 13px;
+  color: gray;
+}
+small {
+  margin: 10px 0;
+  color: gray;
+}
+.buttons {
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 1rem;
+}
+button {
+  /* max-width: 100px; */
+  display: flex;
+  width: 120px;
+  padding: 0.5rem 1rem;
+  align-items: center;
+  justify-content: center;
+  gap: 0.3rem;
+  border-radius: 10px;
+  font-size: 12px;
+}
+.linkedin {
+  background-color: rgb(58, 88, 151);
+  color: white;
+}
+.cardbody {
+  padding: 1.4rem;
+}
+.cardbody p {
+  color: gray;
+  font-size: 12px;
+}
+.cardbody h3 {
+  margin: 0.5rem 0 0.2rem 0;
+  font-size: 1rem;
+  color: rgb(58, 88, 151);
+}
+.logo2 {
+  width: 20px;
+  object-fit: contain;
+}
+.footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.logo3 {
+  max-width: 12px;
+  object-fit: contain;
+}

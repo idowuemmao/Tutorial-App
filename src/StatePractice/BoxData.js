@@ -40,6 +40,14 @@ const BoxData = [
     id: 10,
     on: false,
   },
+  {
+    id: 11,
+    on: true,
+  },
+  {
+    id: 12,
+    on: false,
+  },
 ];
 
 export default BoxData;

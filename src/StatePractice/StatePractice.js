@@ -2,6 +2,7 @@ import React from "react";
 import Star from "./Star";
 import Count from "./Count";
 import Box from "./Box";
+import BoxData from "./BoxData";
 import imag from "../Images/pauline.jpg";
 
 const StatePractice = () => {
@@ -61,6 +62,39 @@ const StatePractice = () => {
     });
   }
 
+  const [boxes, setBoxes] = React.useState(BoxData);
+
+  function toogle(theId) {
+    // console.log(theId);
+    // const [isOn, setIsOn] = React.useState(theId);
+    // setIsOn((prevSetIsOn) => !prevSetIsOn);
+
+    //-----IMPERATIVE METHODS------
+    // setBoxes((prevBoxes) => {
+    //   const newBoxes = [];
+    //   for (let i = 0; i < prevBoxes.length; i++) {
+    //     const currentBoxes = prevBoxes[i];
+    //     if (currentBoxes.id === theId) {
+    //       const updatedBoxes = { ...currentBoxes, on: !currentBoxes.on };
+    //       newBoxes.push(updatedBoxes);
+    //     } else {
+    //       newBoxes.push(currentBoxes);
+    //     }
+    //   }
+    //   return newBoxes;
+    // });
+
+    //--------DECLARATIVE METHODS--------
+    setBoxes((prevBoxes) => {
+      return prevBoxes.map((boxx) => {
+        return boxx.id === theId ? { ...boxx, on: !boxx.on } : boxx;
+      });
+    });
+  }
+  const boxElements = boxes.map((box) => (
+    <Box key={box.id} id={box.id} on={box.on} onClick={toogle} />
+  ));
+
   return (
     <div className="text-center grid gap-4 sm:text-base text-xs pt-4 font-bold italic font-mono">
       <div
@@ -105,9 +139,7 @@ const StatePractice = () => {
         <p>{contact.contact}</p>
         <p>{contact.email}</p>
       </div>
-      <div>
-        <Box />
-      </div>
+      <div className="grid grid-cols-3 gap-4">{boxElements}</div>
     </div>
   );
 };

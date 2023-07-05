@@ -1,13 +1,18 @@
 import React from "react";
-import BoxData from "./BoxData";
 
+export default function Box(props) {
+  const myStyles = {
+    backgroundColor: props.on ? "fuchsia" : "black",
+    color: props.on ? "white" : "red",
+  };
 
-export default function Box() {
-  const [boxes, setBoxes] = React.useState(BoxData);
-  const boxElement = boxes.map((box) => (
-    <div key={box.id} className="w-auto h-auto p-8 bg-fuchsia-800 text-white ">
-      box
+  return (
+    <div
+      style={myStyles}
+      onClick={() => props.onClick(props.id)}
+      className="bg-red-500 cursor-pointer p-4"
+    >
+      BOX
     </div>
-  ));
-  return <div className="grid grid-cols-5 gap-4">{boxElement}</div>;
+  );
 }
