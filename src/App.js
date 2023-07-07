@@ -5,7 +5,8 @@ import React from "react";
 // import Navbar from "./Airbnb/Navbar";
 // import Card from "./Airbnb/Card";
 // import CardData from "./Airbnb/CardData";
-import MemeGen from "./MemeGenerator/MemeGen";
+// import MemeGen from "./MemeGenerator/MemeGen";
+import Form from "./Forms/Forms";
 
 function App() {
   // console.log(CardData);
@@ -38,7 +39,8 @@ function App() {
     // </div>
     //Meme Generator
     <div>
-      <MemeGen />
+      {/* <MemeGen /> */}
+      <Form />
     </div>
   );
 }
