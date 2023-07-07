@@ -6,8 +6,9 @@ import React from "react";
 // import Card from "./Airbnb/Card";
 // import CardData from "./Airbnb/CardData";
 // import MemeGen from "./MemeGenerator/MemeGen";
-import Form from "./Forms/Forms";
-
+// import Form from "./Forms/Forms";
+// import SignUp from "./SignUp/SignUp";
+import GetData from "./ApiCall/GetData";
 function App() {
   // console.log(CardData);
   // const cardElement = CardData.map((card) => {
@@ -40,7 +41,9 @@ function App() {
     //Meme Generator
     <div>
       {/* <MemeGen /> */}
-      <Form />
+      {/* <Form /> */}
+      {/* <SignUp /> */}
+      <GetData />
     </div>
   );
 }

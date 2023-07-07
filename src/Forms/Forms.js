@@ -10,7 +10,6 @@ export default function Form() {
     employment: "",
     favColor: "",
   });
-  // console.log(formData.employment);
 
   function handleChange(event) {
     const { name, value, type, checked } = event.target;
@@ -18,8 +17,12 @@ export default function Form() {
       return { ...prevFormData, [name]: type === "checkbox" ? checked : value };
     });
   }
+  function handleSubmit(event) {
+    event.preventDefault();
+    console.log(formData);
+  }
   return (
-    <form className="grid gap-2 m-2">
+    <form className="grid gap-2 m-2" onSubmit={handleSubmit}>
       <input
         className="border border-black p-2"
         placeholder="First name"
@@ -69,6 +72,7 @@ export default function Form() {
         value={formData.favColor}
         className="border border-black"
       >
+        <option value="">-----Choose-----</option>
         <option value="red">Red</option>
         <option value="blue">Blue</option>
         <option value="green">Green</option>
@@ -105,7 +109,9 @@ export default function Form() {
           checked={formData.employment === "full-time"}
         />
         <label htmlFor="full-time">Full-Time</label> <br />
+        <br />
       </fieldset>
+      <button className="border border-black ">Submit</button>
     </form>
   );
 }
