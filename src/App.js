@@ -5,10 +5,11 @@ import React from "react";
 // import Navbar from "./Airbnb/Navbar";
 // import Card from "./Airbnb/Card";
 // import CardData from "./Airbnb/CardData";
-import MemeGen from "./MemeGenerator/MemeGen";
+// import MemeGen from "./MemeGenerator/MemeGen";
 // import Form from "./Forms/Forms";
 // import SignUp from "./SignUp/SignUp";
 // import GetData from "./ApiCall/GetData";
+import TrackerApp from "./WindowTracker/TrackerApp";
 function App() {
   // console.log(CardData);
   // const cardElement = CardData.map((card) => {
@@ -40,10 +41,11 @@ function App() {
     // </div>
     //Meme Generator
     <div>
-      <MemeGen />
+      {/* <MemeGen /> */}
       {/* <Form /> */}
       {/* <SignUp /> */}
       {/* <GetData /> */}
+      <TrackerApp />
     </div>
   );
 }

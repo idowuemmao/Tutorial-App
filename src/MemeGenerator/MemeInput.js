@@ -1,24 +1,22 @@
 import React from "react";
 import picss from "../Images/mary.jpg";
-import MemeData from "./MemeData";
 
 export default function MemeInput() {
+  const [allMeme, setAllMeme] = React.useState([]);
   React.useEffect(() => {
     fetch(`https://api.imgflip.com/get_memes`)
       .then((response) => response.json())
-      .then((data) => console.log(data.data.memes));
+      .then((data) => setAllMeme(data.data.memes));
   }, []);
-
   const [meme, setMeme] = React.useState({
     topText: "",
     bottomText: "",
     randomImg: picss,
   });
-  const [allMeme, setAllMeme] = React.useState(MemeData);
+  // console.log(allMeme);
   function GetMeme() {
-    const memeArray = allMeme.data.memes;
-    const randomMeme = Math.floor(Math.random() * memeArray.length);
-    const image = memeArray[randomMeme].pic;
+    const randomMeme = Math.floor(Math.random() * allMeme.length);
+    const image = allMeme[randomMeme].url;
     setMeme((prevMeme) => {
       return { ...prevMeme, randomImg: image };
     });
