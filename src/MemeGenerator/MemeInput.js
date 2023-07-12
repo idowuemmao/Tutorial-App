@@ -4,6 +4,14 @@ import picss from "../Images/mary.jpg";
 export default function MemeInput() {
   const [allMeme, setAllMeme] = React.useState([]);
   React.useEffect(() => {
+    //using an ASYNC function
+    // async function getMemes() {
+    //   const res = await fetch(`https://api.imgflip.com/get_memes`);
+    //   const data = await res.json();
+    //   setAllMeme(data.data.memes);
+    // }
+    // getMemes();
+
     fetch(`https://api.imgflip.com/get_memes`)
       .then((response) => response.json())
       .then((data) => setAllMeme(data.data.memes));
