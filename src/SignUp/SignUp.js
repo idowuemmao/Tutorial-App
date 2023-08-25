@@ -7,7 +7,6 @@ export default function SignUp() {
     confirmPassword: "",
     newsletter: "",
   });
-  //   console.log(signUpData);
   function handleSignUp(event) {
     const { name, value, type, checked } = event.target;
     setSignUpData((prevSignUpData) => {
