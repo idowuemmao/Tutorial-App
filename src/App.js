@@ -6,6 +6,7 @@ import React from "react";
 // import Navbar from "./Airbnb/Navbar";
 // import Card from "./Airbnb/Card";
 // import CardData from "./Airbnb/CardData";
+import Board from "./TicTac/Board";
 import Form from "./Forms/Forms";
 import SignUp from "./SignUp/SignUp";
 // import GetData from "./ApiCall/GetData";
@@ -46,6 +47,9 @@ function App() {
       <SignUp />
       {/* <GetData /> */}
       {/* <TrackerApp /> */}
+      {/* <main className=" grid place-items-center gap-2 h-screen bg-gradient-to-tr from-red-400 to-green-950 p-8">
+        <Board />
+      </main> */}
     </div>
   );
 }

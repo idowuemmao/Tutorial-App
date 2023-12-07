@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.square {
+  @apply rounded-xl w-16 h-16 bg-pink-400 text-4xl text-red-500;
+}
+.square_o {
+  @apply bg-green-500 text-white;
+}
+.square_x {
+  @apply bg-red-500 text-white;
+}
