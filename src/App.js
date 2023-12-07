@@ -6,7 +6,7 @@ import React from "react";
 // import Navbar from "./Airbnb/Navbar";
 // import Card from "./Airbnb/Card";
 // import CardData from "./Airbnb/CardData";
-import Board from "./TicTac/Board";
+// import Board from "./TicTac/Board";
 import Form from "./Forms/Forms";
 import SignUp from "./SignUp/SignUp";
 // import GetData from "./ApiCall/GetData";
